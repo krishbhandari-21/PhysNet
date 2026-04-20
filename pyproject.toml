@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "physnet"
+version = "0.1.0"
+description = "A modular Physics-Informed Neural Network (PINN) framework in PyTorch"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "torch",
+    "numpy",
+    "scipy",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["core*", "physics*", "utils*", "examples*"]
